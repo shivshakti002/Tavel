@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Jaipur — Travelly India{% endblock %}
+{% block content %}
+<main class="container" style="padding-top:22px;">
+  <section class="card" id="visit">
+    <h1>Jaipur</h1>
+    <p class="meta">Palaces • Forts • Culture</p>
+    <img src="{{ url_for('static', filename='images/jaipur.jpg') }}" class="place-img" alt="Jaipur">
+    <h3>Highlights</h3>
+    <ul>
+      <li>Amber Fort & City Palace</li>
+      <li>Hawa Mahal and bazaars</li>
+      <li>Rajasthani cuisine & folk shows</li>
+    </ul>
+
+    <h3>Package</h3>
+    <p>4 days • 3 nights • Starting from <strong>₹10,499</strong></p>
+
+    <div style="margin-top:12px">
+      <a class="btn" href="{{ url_for('index') }}">Back</a>
+      <a class="btn-outline" href="{{ url_for('booking') }}">Book Now</a>
+    </div>
+  </section>
+</main>
+{% endblock %}

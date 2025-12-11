@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Bookings</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container" style="padding:20px;">
+    <h2>Bookings</h2>
+    <p><a href="{{ url_for('index') }}">Back to Site</a></p>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr style="background:#fff;">
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">ID</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Name</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Email</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Phone</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Date</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Persons</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Package</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Message</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for b in bookings %}
+        <tr>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.id }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.name }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.email }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.phone }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.travel_date }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.persons }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.package }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.message }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ b.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

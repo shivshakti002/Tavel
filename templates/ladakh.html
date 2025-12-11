@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Ladakh — Travelly India{% endblock %}
+{% block content %}
+<main class="container" style="padding-top:22px;">
+  <section class="card" id="visit">
+    <h1>Ladakh</h1>
+    <p class="meta">Mountains • Lakes • Adventure</p>
+    <img src="{{ url_for('static', filename='images/ladakh.jpg') }}" class="place-img" alt="Ladakh">
+    <h3>Highlights</h3>
+    <ul>
+      <li>Pangong Tso & Nubra Valley</li>
+      <li>Motorbike routes and high passes</li>
+      <li>Monasteries and local culture</li>
+    </ul>
+
+    <h3>Package</h3>
+    <p>7 days • 6 nights • Starting from <strong>₹24,999</strong></p>
+
+    <div style="margin-top:12px">
+      <a class="btn" href="{{ url_for('index') }}">Back</a>
+      <a class="btn-outline" href="{{ url_for('booking') }}">Book Now</a>
+    </div>
+  </section>
+</main>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Goa — Travelly India{% endblock %}
+{% block content %}
+<main class="container" style="padding-top:22px;">
+  <section class="card" id="visit">
+    <h1>Goa</h1>
+    <p class="meta">Beaches • Nightlife • Seafood</p>
+    <img src="{{ url_for('static', filename='images/goa.jpg') }}" class="place-img" alt="Goa">
+    <h3>Highlights</h3>
+    <ul>
+      <li>Calangute & Baga beaches</li>
+      <li>Watersports and sunset cruises</li>
+      <li>Portuguese architecture in Old Goa</li>
+    </ul>
+
+    <h3>Package</h3>
+    <p>5 days • 4 nights • Starting from <strong>₹12,999</strong></p>
+
+    <div style="margin-top:12px">
+      <a class="btn" href="{{ url_for('index') }}">Back</a>
+      <a class="btn-outline" href="{{ url_for('booking') }}">Book Now</a>
+    </div>
+  </section>
+</main>
+{% endblock %}

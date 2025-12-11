@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+{% block title %}Book — Travelly India{% endblock %}
+{% block content %}
+<main class="container" style="padding-top:22px;">
+  <section class="card">
+    <h1>Book Your Trip</h1>
+    <p>Fill the details below to complete booking.</p>
+
+    <div class="booking-container">
+      <form id="bookingForm" class="booking-form" method="post" action="{{ url_for('api_book') }}">
+        <label>Name *</label>
+        <input name="name" required>
+
+        <label>Email *</label>
+        <input name="email" type="email" required>
+
+        <label>Phone *</label>
+        <input name="phone" required>
+
+        <label>Travel Date *</label>
+        <input name="date" type="date" required>
+
+        <label>No. of Persons *</label>
+        <input name="persons" type="number" min="1" required>
+
+        <label>Select Package *</label>
+        <select name="package" required>
+          <option disabled selected>Select Package</option>
+          <option>Goa – ₹12,999</option>
+          <option>Jaipur – ₹10,499</option>
+          <option>Ladakh – ₹24,999</option>
+        </select>
+
+        <label>Special Request</label>
+        <textarea name="message" rows="3"></textarea>
+
+        <button class="btn" type="submit">Confirm Booking</button>
+      </form>
+
+      <div class="booking-side-image">
+        <img src="{{ url_for('static', filename='images/hero.jpg') }}" alt="travel">
+      </div>
+    </div>
+
+    <div id="successMessage" class="card" style="display:none;margin-top:18px;">
+      <h3>🎉 Booking Successful!</h3>
+      <p>Thank you! We will contact you shortly.</p>
+      <a class="btn" href="{{ url_for('index') }}">Back to Home</a>
+    </div>
+
+  </section>
+</main>
+{% endblock %}

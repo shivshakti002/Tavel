@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Admin — Contacts</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+  <div class="container" style="padding:20px;">
+    <h2>Contacts</h2>
+    <p><a href="{{ url_for('index') }}">Back to Site</a></p>
+    <table style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">ID</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Name</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Email</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Message</th>
+          <th style="text-align:left;padding:8px;border-bottom:1px solid #eee">Created</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for c in contacts %}
+        <tr>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ c.id }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ c.name }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ c.email }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ c.message }}</td>
+          <td style="padding:8px;border-bottom:1px solid #f0f0f0">{{ c.created_at }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>
